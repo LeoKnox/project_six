@@ -15,8 +15,8 @@ class TodoListApiView(APIView):
     
     def post(self, request, *args, **kwargs):
         data = {
-            'task': request.data.get('task')
-            'completed': request.data.get('completed')
+            'task': request.data.get('task'),
+            'completed': request.data.get('completed'),
             'user': request.user.id
         }
     
