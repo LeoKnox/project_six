@@ -6,7 +6,7 @@ from .models import Todo
 from .serializers import TodoSerializer
 
 class TodoListApiView(APIView):
-    permission_classes = [permissions.ISAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request, *args, **kwargs):
         todos = Todo.objects.filter(user = request.user.id)
