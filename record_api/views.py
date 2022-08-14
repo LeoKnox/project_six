@@ -7,8 +7,10 @@ from .serializers import RecordSerializer
 
 class RecordDetailApiView(APIView):
     def get(self, request):
-        return ({"record_detail": "detail"})
+        return Response("Record Detail")
 
 class RecordListApiView(APIView):
     def get(self, request):
-        return({"record_list": "list"})
+        records = Record.objects.filter()
+        serializer = RecordSerializer(records, many=True)
+        return Response("Record List")
