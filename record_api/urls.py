@@ -6,6 +6,6 @@ from .views import (
 )
 
 urlpatterns = [
-    path('api', RecordListApiView.as_view()),
-    path('api/<int:todo_id>/', RecordDetailApiView.as_view()),
+    path('api/', RecordListApiView.as_view()),
+    path('api/<int:record_id>/', RecordDetailApiView.as_view()),
 ]
