@@ -11,6 +11,6 @@ class RecordDetailApiView(APIView):
 
 class RecordListApiView(APIView):
     def get(self, request):
-        records = Record.objects.filter()
+        records = Record.objects.all()
         serializer = RecordSerializer(records, many=True)
         return Response(serializer.data)
