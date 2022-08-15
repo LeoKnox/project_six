@@ -6,7 +6,7 @@ from .models import Record
 from .serializers import RecordSerializer
 
 class RecordDetailApiView(APIView):
-    def get(self, request):
+    def get(self, request, *arg, **kwargs):
         return Response("Record Detail")
 
 class RecordListApiView(APIView):
