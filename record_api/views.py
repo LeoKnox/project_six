@@ -13,7 +13,7 @@ class RecordListApiView(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request):
-        records = Record.objects.all()
+        records = Record.objects.filter(user = request.user.record)
         print("*****", records.query)
         for r in records:
             print(r)
