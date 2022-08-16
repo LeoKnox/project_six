@@ -10,8 +10,10 @@ class RecordDetailApiView(APIView):
         return Response("Record Detail")
 
 class RecordListApiView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
     def get(self, request):
         records = Record.objects.all()
-        print("*****", records)
+        print("*****", records.query)
         serializer = RecordSerializer(records, many=True)
         return Response(serializer.data,status=status.HTTP_200_OK)
