@@ -15,5 +15,7 @@ class RecordListApiView(APIView):
     def get(self, request):
         records = Record.objects.all()
         print("*****", records.query)
+        for r in records:
+            print(r)
         serializer = RecordSerializer(records, many=True)
         return Response(serializer.data,status=status.HTTP_200_OK)
