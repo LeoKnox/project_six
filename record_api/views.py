@@ -13,9 +13,7 @@ class RecordListApiView(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request):
-        records = Record.objects.filter(user = request.user.record)
+        records = Record.objects.get()
         print("*****", records.query)
-        for r in records:
-            print(r)
         serializer = RecordSerializer(records, many=True)
         return Response(serializer.data,status=status.HTTP_200_OK)
