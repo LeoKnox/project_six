@@ -12,5 +12,6 @@ class RecordDetailApiView(APIView):
 class RecordListApiView(APIView):
     def get(self, request):
         records = Record.objects.all()
+        print("*****", records)
         serializer = RecordSerializer(records, many=True)
         return Response(serializer.data,status=status.HTTP_200_OK)
