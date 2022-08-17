@@ -14,5 +14,6 @@ class RecordListApiView(APIView):
 
     def get(self, request, *args, **kwargs):
         records = Record.objects.all()
+        print("ddd",records[0].record)
         serializer = RecordSerializer(records, many=True)
-        return Response(serializer.record,status=status.HTTP_200_OK)
+        return Response(serializer.data,status=status.HTTP_200_OK)
