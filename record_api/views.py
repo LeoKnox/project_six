@@ -8,14 +8,14 @@ from .serializers import RecordSerializer
 class RecordDetailApiView(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
-    def get_object(self, record_id, user_id):
+    def get_object(self, record_id):
         try:
-            return Record.objects.get(id=record_id, user = user_id)
+            return Record.objects.get(id=record_id)
         except Record.DoesNotExist:
             return None
 
-    def get(self, request, *arg, **kwargs):
-        record_instance = self.get_object(id, request.user.id)
+    def get(self, request, record_id, *arg, **kwargs):
+        record_instance = self.get_object(record_id)
         if not record_instance:
             return Response(
                 {"res": "object with record id does not exist"},
