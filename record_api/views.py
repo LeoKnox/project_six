@@ -18,6 +18,19 @@ class RecordDetailApiView(APIView):
         records = Record.objects.get(id = record_id)
         serializer = RecordSerializer(records)
         return Response(serializer.data, status=status.HTTP_200_OK)
+    
+    def delete(self, request, record_id, *args, **kwargs):
+        record_instance = self.get_object(record_id)
+        if not record_instance:
+            return Response(
+                {"res": "Object with record id does nto exist"},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        record_instance.delete()
+        return Response(
+            {"res": "Object delted!"},
+            status=status.HTTP_200_OK
+        )
 
 class RecordListApiView(APIView):
     permission_classes = [permissions.IsAuthenticated]
