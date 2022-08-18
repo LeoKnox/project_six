@@ -6,8 +6,24 @@ from .models import Record
 from .serializers import RecordSerializer
 
 class RecordDetailApiView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_object(self, record_id, user_id):
+        try:
+            return Record.objects.get(id=id, user = user_id)
+        except Record.DoesNotExist:
+            return None
+
     def get(self, request, *arg, **kwargs):
-        return Response("Record Detail")
+        record_instance = self.get_object(id, request.user.id)
+        if not record_instance:
+            return Response(
+                {"res": "object with record id does not exist"},
+                status = status.HTTP_400_BAD_REQUEST
+            )
+
+            serializer = RecordSerializer(record_instance)
+            return Response(serializer.data, status=status.HTTP_200_OK)
 
 class RecordListApiView(APIView):
     permission_classes = [permissions.IsAuthenticated]
