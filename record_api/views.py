@@ -26,3 +26,13 @@ class RecordListApiView(APIView):
         records = Record.objects.all()
         serializer = RecordSerializer(records, many=True)
         return Response(serializer.data,status=status.HTTP_200_OK)
+    
+    def post(self, request, *args, **kwargs):
+        data = {
+            'record': request.data.get('record')
+        }
+        serializer = RecordSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.erros, status=status.HTTP_400_BAD_REQUEST)
