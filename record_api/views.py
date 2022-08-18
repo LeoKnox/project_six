@@ -14,8 +14,8 @@ class RecordDetailApiView(APIView):
         except Record.DoesNotExist:
             return None
 
-    def get(self, request, *arg, **kwargs):
-        records = Record.objects.filter(id = request.user.id)
+    def get(self, request, record_id, *arg, **kwargs):
+        records = Record.objects.get(id = record_id)
         serializer = RecordSerializer(records)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
