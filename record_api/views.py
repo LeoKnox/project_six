@@ -15,15 +15,9 @@ class RecordDetailApiView(APIView):
             return None
 
     def get(self, request, record_id, *arg, **kwargs):
-        record_instance = self.get_object(record_id)
-        if not record_instance:
-            return Response(
-                {"res": "object with record id does not exist"},
-                status = status.HTTP_400_BAD_REQUEST
-            )
-
-            serializer = RecordSerializer(record_instance)
-            return Response(serializer.data, status=status.HTTP_200_OK)
+        records = Record.objects.filter(id = request.user.id)
+        serializer = RecordSerializer(records, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
 class RecordListApiView(APIView):
     permission_classes = [permissions.IsAuthenticated]
