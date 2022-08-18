@@ -15,8 +15,8 @@ class RecordDetailApiView(APIView):
             return None
 
     def get(self, request, record_id, *arg, **kwargs):
-        records = Record.objects.filter(id = request.user.id)
-        serializer = RecordSerializer(records, many=True)
+        records = Record.objects.filter(id = record_id)
+        serializer = RecordSerializer(records)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 class RecordListApiView(APIView):
@@ -24,6 +24,5 @@ class RecordListApiView(APIView):
 
     def get(self, request, *args, **kwargs):
         records = Record.objects.all()
-        print("ddd",records[0].record)
         serializer = RecordSerializer(records, many=True)
         return Response(serializer.data,status=status.HTTP_200_OK)
