@@ -16,6 +16,11 @@ class RecordDetailApiView(APIView):
 
     def get(self, request, record_id, *arg, **kwargs):
         records = Record.objects.get(id = record_id)
+        if not records:
+            return Response(
+                {"res": "Object with id does not exist"},
+                status=status.HTTP_400_BAD_REQUEST
+            )
         serializer = RecordSerializer(records)
         return Response(serializer.data, status=status.HTTP_200_OK)
     
