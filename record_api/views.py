@@ -10,7 +10,7 @@ class RecordDetailApiView(APIView):
 
     def get_object(self, record_id, user_id):
         try:
-            return Record.objects.get(id=id, user = user_id)
+            return Record.objects.get(id=record_id, user = user_id)
         except Record.DoesNotExist:
             return None
 
