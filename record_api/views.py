@@ -24,6 +24,22 @@ class RecordDetailApiView(APIView):
         serializer = RecordSerializer(records)
         return Response(serializer.data, status=status.HTTP_200_OK)
     
+    def put(self, request, todo_id, *args, **kwargs):
+        record_instance = self.get_object(record_id, request.user.id)
+        if not record_instance:
+            return Response(
+                {"res": "Object with record id does not exist"},
+                status = status.HTTP_400_BAD_REQUEST
+            )
+        data = {
+            'record': request.data.get('record'),
+        }
+        serializer = RecordSerializer(instance = record_instance, data=data, partial = True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
     def delete(self, request, record_id, *args, **kwargs):
         record_instance = self.get_object(record_id)
         if not record_instance:
