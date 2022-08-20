@@ -133,12 +133,7 @@ REST_FRAMEWORK = {
     )
 }
 
-CORS_ALLOW_METHODS = [
-    'DELETE',
-    'GET',
-    'PUT',
-    'POST',
-]
+CORS_ALLOWCREDENTIALS = True
 
 CORS_ALLOW_WHITELIST = [
     'http://localhost:3000',
