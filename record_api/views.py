@@ -2,6 +2,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import permissions
+from django.views.decorators.csrf import csrf_exempt
 from .models import Record
 from .serializers import RecordSerializer
 
@@ -56,6 +57,7 @@ class RecordDetailApiView(APIView):
 class RecordListApiView(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
+    @csrf_exempt
     def get(self, request, *args, **kwargs):
         records = Record.objects.all()
         serializer = RecordSerializer(records, many=True)
