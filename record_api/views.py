@@ -57,7 +57,6 @@ class RecordDetailApiView(APIView):
 class RecordListApiView(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
-    @csrf_exempt
     def get(self, request, *args, **kwargs):
         records = Record.objects.all()
         serializer = RecordSerializer(records, many=True)
