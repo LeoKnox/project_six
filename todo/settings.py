@@ -132,3 +132,15 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
     )
 }
+
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'PUT',
+    'POST',
+]
+
+CORS_ALLOW_WHITELIST = [
+    'http://localhost:3000',
+    'http://127.0.0.1:8000/api/',
+]
