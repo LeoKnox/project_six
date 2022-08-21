@@ -133,7 +133,7 @@ REST_FRAMEWORK = {
     )
 }
 
-CORS_ALLOWCREDENTIALS = True
+CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOW_WHITELIST = [
     'http://localhost:3000',
