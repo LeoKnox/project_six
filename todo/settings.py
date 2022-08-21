@@ -131,15 +131,6 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ],
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.BasicAuthentication',
-        'rest_framework.authentication.TokenAuthentication',
-    ]
 }
 
-CORS_ALLOW_CREDENTIALS = True
-
-CORS_ALLOW_WHITELIST = [
-    'http://localhost:3000',
-    'http://127.0.0.1:8000/api/',
-]
+CORS_ALLOW_ALL_ORIGINS = True
