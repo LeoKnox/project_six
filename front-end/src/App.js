@@ -1,5 +1,6 @@
 import './App.css';
-import {useEffect, useState} from "react";
+import {useEffect, useState} from 'react';
+import React from 'react';
 import axios from 'axios';
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
     axios.get(`http://127.0.0.1:8000/record/api/`)
       .then(res => {
         const records = res.data;
-        this.setRecord({ records })
+        setRecord({ records })
       })
     console.log(records);
   }, []);
