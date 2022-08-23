@@ -55,7 +55,7 @@ class RecordDetailApiView(APIView):
         )
 
 class RecordListApiView(APIView):
-    permission_classes = [permissions.IsAuthenticated]
+    #permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request, *args, **kwargs):
         records = Record.objects.all()
