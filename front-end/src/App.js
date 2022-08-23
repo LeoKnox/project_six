@@ -2,6 +2,12 @@ import './App.css';
 import {useEffect, useState} from 'react';
 import React from 'react';
 
+function Record(records) {
+  for (r in records) {
+    <p>{r.record}</p>
+  }
+}
+
 function App() {
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
@@ -14,16 +20,16 @@ function App() {
           .then((response) => response.json())
           .then(setRecord);
       }, []);
-    console.log("*", records);
+      if (records)
+        return (
+          <Record records={records} />
+        )
 
   return (
       <div className="App">
         <header className="App-header">
           <h1>Display Records</h1>
         </header>
-        {records.map((r, i) => (
-          <p key={i}>{r.record}</p>
-        ))}
       </div>
   );
   }
