@@ -3,8 +3,8 @@ import {useEffect, useState} from 'react';
 import React from 'react';
 
 function Record(records) {
-  for (r in records) {
-    <p>{r.record}</p>
+  for (let r = 0; r < records.length; r++) {
+    <p>{records[r].record}</p>
   }
 }
 
