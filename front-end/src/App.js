@@ -2,6 +2,10 @@ import './App.css';
 import {useEffect, useState} from 'react';
 import React from 'react';
 
+function Record() {
+  return <h3>Records</h3>
+}
+
 function App() {
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
@@ -20,6 +24,7 @@ function App() {
         <header className="App-header">
           <h1>Display Records</h1>
         </header>
+        <Record />
         {records.map((record, i) => (
           <p key={i}>:{record.record}</p>
         ))}
