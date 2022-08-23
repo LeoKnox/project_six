@@ -24,7 +24,7 @@ function App() {
         )
           .then((response) => response.json())
           .then(setRecord);
-      }, []);
+      });
 
   return (
       <div className="App">
