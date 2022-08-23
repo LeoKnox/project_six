@@ -5,9 +5,9 @@ import React from 'react';
 function Record({myrecords = []}) {
   return (
     <>
-    <p>records</p>
+    <h3>Records</h3>
     {myrecords.map((record, i) => (
-      <p key={i}>{record.record}+</p>
+      <p key={i}>{record.record} +</p>
     ))}
     </>
   )
@@ -30,8 +30,8 @@ function App() {
       <div className="App">
         <header className="App-header">
           <h1>Display Records</h1>
+          <Record myrecords={records} />
         </header>
-        <Record myrecords={records} />
       </div>
   );
   }
