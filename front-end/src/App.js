@@ -1,7 +1,6 @@
 import './App.css';
 import {useEffect, useState} from 'react';
 import React from 'react';
-import axios from 'axios';
 
 function App() {
   var myHeaders = new Headers();
@@ -14,7 +13,7 @@ function App() {
         )
           .then((response) => response.json())
           .then(setRecord);
-      },[]);
+      }, []);
     console.log("*", records);
 
   return (
@@ -22,6 +21,9 @@ function App() {
         <header className="App-header">
           <h1>Display Records</h1>
         </header>
+        {records.map((r, i) => (
+          <p key={i}>{r.record}</p>
+        ))}
       </div>
   );
   }
