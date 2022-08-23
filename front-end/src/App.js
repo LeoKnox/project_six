@@ -2,8 +2,15 @@ import './App.css';
 import {useEffect, useState} from 'react';
 import React from 'react';
 
-function Record() {
-  return <h3>Records</h3>
+function Record({myrecords = []}) {
+  return (
+    <>
+    <p>records</p>
+    {myrecords.map((record, i) => (
+      <p key={i}>{record.record}+</p>
+    ))}
+    </>
+  )
 }
 
 function App() {
@@ -24,7 +31,7 @@ function App() {
         <header className="App-header">
           <h1>Display Records</h1>
         </header>
-        <Record />
+        <Record myrecord={records} />
         {records.map((record, i) => (
           <p key={i}>:{record.record}</p>
         ))}
