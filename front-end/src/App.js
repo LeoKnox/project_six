@@ -9,13 +9,13 @@ function App() {
   const [records, setRecord] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://127.0.0.1:8000/record/api/`)
-      .then(res => {
-        const records = res.data;
-        setRecord({ records })
-      })
-    console.log(records);
-  }, []);
+        fetch(
+          `http://127.0.0.1:8000/record/api/`
+        )
+          .then((response) => response.json())
+          .then(setRecord);
+      },[]);
+    console.log("*", records);
 
   return (
       <div className="App">
