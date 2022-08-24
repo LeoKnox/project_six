@@ -8,7 +8,10 @@ function Record({myrecords = []}) {
     <>
     <h3>Records</h3>
     {myrecords.map((record, i) => (
-      <p key={i}>{record.record} +</p>
+      <>
+        <p key={i}>{record.record} +</p>
+        <Single id={i} />
+      </>
     ))}
     </>
   )
@@ -31,7 +34,6 @@ function App() {
       <div className="App">
         <header className="App-header">
           <h1>Display Records</h1>
-          <Single />
           <Record myrecords={records} />
         </header>
       </div>
