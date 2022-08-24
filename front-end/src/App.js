@@ -1,5 +1,5 @@
 import './App.css';
-import './single.js';
+import Single from './single.js';
 import {useEffect, useState} from 'react';
 import React from 'react';
 
@@ -31,6 +31,7 @@ function App() {
       <div className="App">
         <header className="App-header">
           <h1>Display Records</h1>
+          <Single />
           <Record myrecords={records} />
         </header>
       </div>
