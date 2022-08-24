@@ -1,8 +1,9 @@
 import {useEffect} from 'react';
 
-function Single() {
+function Single(id) {
     useEffect(() => {
-        console.log("RED RED DER");
+        console.log("RED RED DER " + JSON.stringify(id));
+        console.log(id.id);
     })
 
     return (
