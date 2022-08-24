@@ -1,4 +1,5 @@
 import './App.css';
+import './single.js';
 import {useEffect, useState} from 'react';
 import React from 'react';
 
@@ -24,7 +25,7 @@ function App() {
         )
           .then((response) => response.json())
           .then(setRecord);
-      });
+      }, []);
 
   return (
       <div className="App">
