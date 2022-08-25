@@ -3,13 +3,17 @@ import Single from './single.js';
 import {useEffect, useState} from 'react';
 import React from 'react';
 
+function loadRecord() {
+  console.log("******")
+}
+
 function Record({myrecords = []}) {
   return (
     <>
     <h3>Records</h3>
     {myrecords.map((record, i) => (
       <>
-        <p key={i}>{record.record} +</p>
+        <p key={i} onClick={loadRecord()}>{record.record} +</p>
         <Single id={i} />
       </>
     ))}
