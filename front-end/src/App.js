@@ -14,7 +14,7 @@ function Record({myrecords = []}) {
     {myrecords.map((record, i) => (
       <>
         <p key={i}>
-          <button onClick={loadRecord()}>
+          <button onClick={loadRecord}>
             {record.record} +
           </button>
           </p>
