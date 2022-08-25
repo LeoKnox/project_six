@@ -27,7 +27,10 @@ function App() {
           `http://127.0.0.1:8000/record/api/`
         )
           .then((response) => response.json())
-          .then(setRecord);
+          .then(setRecord)
+          .catch((err) => {
+            console.log(err.message);
+          })
       }, []);
 
   return (

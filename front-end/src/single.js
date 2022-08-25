@@ -7,7 +7,10 @@ function Single(id) {
     useEffect(() => {
         fetch(`http://127.0.0.1:8000/record/api/${id.id}`)
             .then((response) => response.json())
-            .then(setSingle);
+            .then(setSingle)
+            .catch((err) => {
+                console.log(err.message);
+            })
         console.log("RED RED DER " + JSON.stringify(id));
     }, [])
 
