@@ -13,7 +13,11 @@ function Record({myrecords = []}) {
     <h3>Records</h3>
     {myrecords.map((record, i) => (
       <>
-        <p key={i} onClick={loadRecord()}>{record.record} +</p>
+        <p key={i}>
+          <button onClick={loadRecord()}>
+            {record.record} +
+          </button>
+          </p>
         <Single id={i} />
       </>
     ))}
