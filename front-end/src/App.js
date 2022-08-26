@@ -45,7 +45,7 @@ function App() {
       <div className="App">
         <header className="App-header">
           <h1>Display Records</h1>
-          <Record myrecords="{records}" />
+          <Record myrecords="{records[0]}" />
         </header>
       </div>
   );
