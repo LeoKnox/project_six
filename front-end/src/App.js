@@ -3,8 +3,8 @@ import Single from './single.js';
 import {useEffect, useState} from 'react';
 import React from 'react';
 
-function loadRecord() {
-  console.log("******")
+const loadRecord = (e) => {
+  e.preventDefault();
 }
 
 function Record({myrecords = []}) {
@@ -45,7 +45,7 @@ function App() {
       <div className="App">
         <header className="App-header">
           <h1>Display Records</h1>
-          <Record myrecords={records} />
+          <Record myrecords={...records} />
         </header>
       </div>
   );
