@@ -46,7 +46,7 @@ function App() {
         <header className="App-header">
           <h1>Display Records</h1>
           {records.map(record => {
-            <Single myrecords="{record}" />
+            <p>{record}&</p>
           })}
         </header>
       </div>
