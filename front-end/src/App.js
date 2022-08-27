@@ -45,7 +45,9 @@ function App() {
       <div className="App">
         <header className="App-header">
           <h1>Display Records</h1>
-          <Record myrecords="{records.record}" />
+          {records.map(record => {
+            <Record myrecords="{record}" />
+          })}
         </header>
       </div>
   );
