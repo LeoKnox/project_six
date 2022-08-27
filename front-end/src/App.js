@@ -40,6 +40,7 @@ function App() {
             console.log(err.message);
           })
       }, []);
+    console.log(records);
 
   return (
       <div className="App">
