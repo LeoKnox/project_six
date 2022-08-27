@@ -7,24 +7,6 @@ const loadRecord = (e) => {
   e.preventDefault();
 }
 
-function Record({myrecords = []}) {
-  return (
-    <>
-    <h3>Records</h3>
-    {myrecords.map((record, i) => (
-      <>
-        <p key={i}>
-          <button onClick={loadRecord}>
-            {record.record} +
-          </button>
-          </p>
-        <Single id={i} />
-      </>
-    ))}
-    </>
-  )
-}
-
 function App() {
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
@@ -47,7 +29,7 @@ function App() {
         <header className="App-header">
           <h1>Display Records</h1>
           {records.map(record => {
-            <p>{record}&</p>
+            <Single record={record}>**</Single>
           })}
         </header>
       </div>

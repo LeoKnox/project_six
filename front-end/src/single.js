@@ -4,7 +4,7 @@ import React from 'react';
 function Single(record) {
 
     return (
-        <p>One at a time {record.record}</p>
+        <p>One at a time {record}</p>
     )
 }
 
