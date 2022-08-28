@@ -28,9 +28,7 @@ function App() {
       <div className="App">
         <header className="App-header">
           <h1>Display Records</h1>
-          {records.map(record => {
-            <p>** {record.record}</p>
-          })}
+          <p>{records[0].record} ==</p>
         </header>
       </div>
   );
