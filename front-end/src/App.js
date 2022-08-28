@@ -29,7 +29,7 @@ function App() {
         <header className="App-header">
           <h1>Display Records</h1>
           {records.map(record => {
-            <Single record={record}>**</Single>
+            <p>** {record.record}</p>
           })}
         </header>
       </div>
