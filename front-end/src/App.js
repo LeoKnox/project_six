@@ -28,7 +28,7 @@ function App() {
       <div className="App">
         <header className="App-header">
           <h1>Display Records</h1>
-          {records.map(r => <Single record={r} />)}
+          {records.map(r => <p>{r}</p>)}
         </header>
       </div>
   );
