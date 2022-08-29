@@ -17,14 +17,14 @@ function App() {
       .then(response => response.json())
       .then(setRecord)
       .catch(console.error)
-    console.log(records);
+    console.log("****"+records);
   }, [])
 
   return (
     <div className="App">
       <header className="App-header">
         <h1>Display Records</h1>
-        {records.map(r => <p>{r.record}</p>)}
+        {records.map(r => (<p>{r.record}</p>))}
       </header>
     </div>
   )
