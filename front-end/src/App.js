@@ -13,26 +13,21 @@ function App() {
   const [records, setRecord] = useState(null);
 
   useEffect(() => {
-    async () => {
-      try {
-        const response = await fetch(
-          'http://127.0.0.1:8000/record/api/'
-        );
-        setRecord (await response.json());
-      } catch (error) {
-        console.error(errror)
-      }
-    }
+    fetch('http://127.0.0.1:8000/record/api/')
+      .then(response => response.json())
+      .then(setRecord)
+      .catch(console.error)
     console.log(records);
+  }, [])
 
   return (
-      <div className="App">
-        <header className="App-header">
-          <h1>Display Records</h1>
-          {records.map(r => <p>{r}</p>)}
-        </header>
-      </div>
-  );
-  }
+    <div className="App">
+      <header className="App-header">
+        <h1>Display Records</h1>
+        {records.map(r => <p>{r.record}</p>)}
+      </header>
+    </div>
+  )
+}
 
 export default App;
