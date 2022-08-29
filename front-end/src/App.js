@@ -13,15 +13,16 @@ function App() {
   const [records, setRecord] = useState(null);
 
   useEffect(() => {
-        fetch(
-          `http://127.0.0.1:8000/record/api/`
-        )
-          .then((response) => response.json())
-          .then(setRecord)
-          .catch((err) => {
-            console.log(err.message);
-          })
-      }, []);
+    async () => {
+      try {
+        const response = await fetch(
+          'http://127.0.0.1:8000/record/api/'
+        );
+        setRecord (await response.json());
+      } catch (error) {
+        console.error(errror)
+      }
+    }
     console.log(records);
 
   return (
