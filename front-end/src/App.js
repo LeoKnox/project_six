@@ -14,14 +14,13 @@ function App() {
   const [records, setRecord] = useState(null);
 
   useEffect(() => {
-    fetch('http://127.0.0.1:8000/record/api/')
+    fetch(`http://127.0.0.1:8000/record/api/`)
       .then(response => response.json())
       .then(setRecord)
       .catch(console.error)
-    console.log("****"+records);
   }, [])
   if (records)
-    return <ShowRecord item={records.record} />
+    return <Single item={records.record} />
   return <h1>Record</h1>
 }
 
