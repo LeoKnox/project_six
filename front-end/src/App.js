@@ -19,8 +19,9 @@ function App() {
       .then(setRecord)
       .catch(console.error)
   }, [])
-  if (records)
-    return <Single item={records.record} />
+  if (records) {
+    {records.map(x => (<Single item={x} />))}
+  }
   return <h1>Record</h1>
 }
 
