@@ -3,13 +3,14 @@ import Single from './single.js';
 import {useEffect, useState} from 'react';
 import React from 'react';
 
-const loadRecord = (e) => {
-  e.preventDefault();
+function ShowRecord() {
+  return (
+    <div>
+      <h1>Show Records</h1>
+    </div>
+  )
 }
-
 function App() {
-  var myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
   const [records, setRecord] = useState(null);
 
   useEffect(() => {
@@ -19,15 +20,10 @@ function App() {
       .catch(console.error)
     console.log("****"+records);
   }, [])
-
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Display Records</h1>
-        {records.map(r => (<p>{r.record}</p>))}
-      </header>
-    </div>
-  )
+  if (records)
+    return <ShowRecord item={records.record} />
+  return <h1>Record</h1>
 }
+
 
 export default App;
