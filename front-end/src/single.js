@@ -3,6 +3,7 @@ import React from 'react';
 
 function test() {
     console.log("red");
+    return(<p>red</p>);
 }
 
 function Single(record) {
