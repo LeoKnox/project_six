@@ -3,13 +3,6 @@ import Single from './single.js';
 import {useEffect, useState} from 'react';
 import React from 'react';
 
-function ShowRecord() {
-  return (
-    <div>
-      <h1>Show Records</h1>
-    </div>
-  )
-}
 function App() {
   const [records, setRecord] = useState(null);
 
