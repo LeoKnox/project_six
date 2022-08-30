@@ -19,10 +19,9 @@ function App() {
       .then(setRecord)
       .catch(console.error)
   }, [])
-  if (records) {
-    {records.map(x => (<Single item={x} />))}
-  }
-  return <h1>Record</h1>
+  if (records)
+    return records.map(x => (<Single item={x} />))
+  return <h1> No Record</h1>
 }
 
 

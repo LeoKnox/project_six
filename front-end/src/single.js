@@ -5,7 +5,7 @@ function Single(record) {
     console.log("***"+JSON.stringify(record));
 
     return (
-        <p>One at a time {record}</p>
+        <p>One at a time</p>
     )
 }
 
