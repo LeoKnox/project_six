@@ -7,8 +7,11 @@ function test() {
 }
 
 function Single(record) {
+    const [prop, showProp] = useState(true);
     return (
-        <p onClick={() => {test()}}>One at a time {record.record}</p>
+        <p onClick={() => {test()}}>
+            One at a time {record.record}
+        </p>
     )
 }
 
