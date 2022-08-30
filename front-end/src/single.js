@@ -11,6 +11,7 @@ function Single(record) {
     return (
         <p onClick={() => {test()}}>
             One at a time {record.record}
+            {prop ? <p>red</p> : <p>blue</p>}
         </p>
     )
 }
