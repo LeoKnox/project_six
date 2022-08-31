@@ -6,6 +6,15 @@ import React from 'react';
 function App() {
   const [records, setRecord] = useState(null);
 
+  function handleChange(e) {
+    console.log("writing");
+  }
+
+  function handleSubmit(e) {
+    console.log("submitted");
+    e.preventDefault();
+  }
+
   useEffect(() => {
     fetch(`http://127.0.0.1:8000/record/api/`)
       .then(response => response.json())
@@ -18,6 +27,13 @@ function App() {
     {records.map(x => (
       <Single record={x.record} />)
      )}
+     <form onSubmit={handleSubmit}>
+       <label>
+         Record:
+         <input type="text" onChange={handleChange} />
+       </label>
+       <input type="submit" value="Submit" />
+     </form>
      </>)
   return <h1> No Record</h1>
 }
