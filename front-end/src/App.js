@@ -6,11 +6,11 @@ import React from 'react';
 function App() {
   const [records, setRecord] = useState(null);
 
-  function handleChange(data) {
+  function handleChange(data, e) {
     for (let i in data) {
       console.log(i + ":");
     }
-    console.log(data.type);
+    console.log(JSON.stringify(data));
   }
 
   function handleSubmit(data) {
