@@ -6,8 +6,8 @@ import React from 'react';
 function App() {
   const [records, setRecord] = useState(null);
 
-  function handleChange(e) {
-    console.log("writing");
+  function handleChange(data) {
+    console.log("writing"+JSON.stringify(data));
   }
 
   function handleSubmit(data) {
