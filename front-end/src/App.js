@@ -11,7 +11,7 @@ function App() {
   }
 
   function handleSubmit(data) {
-    alert("submitted "+data);
+    alert("submitted "+JSON.stringify(data));
   }
 
   useEffect(() => {
