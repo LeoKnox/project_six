@@ -10,9 +10,8 @@ function App() {
     console.log("writing");
   }
 
-  function handleSubmit(e, data) {
-    console.log("submitted "+data);
-    e.preventDefault();
+  function handleSubmit(data) {
+    alert("submitted "+data);
   }
 
   useEffect(() => {
