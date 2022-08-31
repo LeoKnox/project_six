@@ -10,6 +10,7 @@ function App() {
     for (let i in data) {
       console.log(i + ":");
     }
+    console.log(data.type);
   }
 
   function handleSubmit(data) {
