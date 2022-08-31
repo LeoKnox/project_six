@@ -6,15 +6,12 @@ import React from 'react';
 function App() {
   const [records, setRecord] = useState(null);
 
-  function handleChange(data, e) {
-    for (let i in data) {
-      console.log(i + ":");
-    }
-    console.log(JSON.stringify(data));
+  function handleChange(data) {
+    console.log(data.target.value);
   }
 
   function handleSubmit(data) {
-    alert("submitted "+JSON.stringify(data));
+    alert(data.target.value);
   }
 
   useEffect(() => {
