@@ -7,7 +7,9 @@ function App() {
   const [records, setRecord] = useState(null);
 
   function handleChange(data) {
-    console.log("writing"+JSON.stringify(data));
+    for (let i in data) {
+      console.log(i + ":");
+    }
   }
 
   function handleSubmit(data) {
