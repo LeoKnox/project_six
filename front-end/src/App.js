@@ -13,9 +13,12 @@ function App() {
       .catch(console.error)
   }, [])
   if (records)
-    return records.map(x => (
+    return (
+    <>
+    {records.map(x => (
       <Single record={x.record} />)
-     )
+     )}
+     </>)
   return <h1> No Record</h1>
 }
 
