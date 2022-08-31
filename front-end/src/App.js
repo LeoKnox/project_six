@@ -10,8 +10,8 @@ function App() {
     console.log("writing");
   }
 
-  function handleSubmit(e) {
-    console.log("submitted");
+  function handleSubmit(e, data) {
+    console.log("submitted "+data);
     e.preventDefault();
   }
 
