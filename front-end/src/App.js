@@ -26,7 +26,7 @@ function App() {
     {records.map(x => (
       <Single record={x.record} />)
      )}
-     <form onSubmit={handleSubmit}>
+     <form onSubmit={handleSubmit} method="POST">
        <label>
          Record:
          <input type="text" onChange={handleChange} />
