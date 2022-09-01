@@ -11,6 +11,9 @@ function App() {
   }
 
   function handleSubmit(data) {
+    fetch(`http://127.0.0.1:8000/record/api/`)
+      .then(response => response.json())
+      .then(data => setPostId(data));
     alert(data.target.value);
   }
 
