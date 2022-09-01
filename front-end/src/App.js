@@ -13,8 +13,9 @@ function App() {
   function handleSubmit(data) {
     fetch(`http://127.0.0.1:8000/record/api/`, {
       method: 'POST',
-      body: JSON.stringify({ data })
-    })
+      body: JSON.Stringify(data.target.value),
+      mode: 'cors'
+    });
     alert(data.target.value);
   }
 
