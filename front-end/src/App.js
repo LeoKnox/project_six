@@ -13,11 +13,12 @@ function App() {
   function handleSubmit(data) {
     fetch(`http://127.0.0.1:8000/record/api`, {
       method: 'POST',
-      body: JSON.Stringify(data.target.value),
+      body: JSON.Stringify(data),
+      mode: 'cors'
     })
       .catch(error => {
         console.log(error+"FF"); 
-      })
+      });
     alert(data.target.value);
   }
 
