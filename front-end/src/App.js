@@ -15,9 +15,11 @@ function App() {
     fetch(`http://127.0.0.1:8000/record/api`, {
       method: 'POST',
       headers: {'Content-Type': 'application/json', 'Acess-Control-Allow-Origin':"http://127.0.0.1:8000/"},
+      credentials: 'same-origin',
       body: data,
       mode: 'cors'
     })
+      .then(response => response.json())
       .catch(console.error);
     alert(data.target.value);
   }
