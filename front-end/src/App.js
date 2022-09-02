@@ -14,7 +14,7 @@ function App() {
     data = {"record":"sixth"};
     fetch(`http://127.0.0.1:8000/record/api`, {
       method: 'POST',
-      headers: {'Content-Type': 'application/json', 'Acess-Control-Allow-Origin':"http://127.0.0.1:8000/record/api/"},
+      headers: {'Content-Type': 'application/json', 'Acess-Control-Allow-Origin':"http://127.0.0.1:8000/"},
       body: data,
       mode: 'cors'
     })
