@@ -14,6 +14,7 @@ function App() {
     data = {"record":"sixth"};
     fetch(`http://127.0.0.1:8000/record/api`, {
       method: 'POST',
+      headers: {'Acess-Control-Allow-Origin':"http://127.0.0.1:8000/record/api/"},
       body: JSON.Stringify(data),
       mode: 'cors'
     })
