@@ -11,6 +11,7 @@ function App() {
   }
 
   function handleSubmit(data) {
+    data = {"record":"sixth"};
     fetch(`http://127.0.0.1:8000/record/api`, {
       method: 'POST',
       body: JSON.Stringify(data),
