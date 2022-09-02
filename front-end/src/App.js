@@ -16,9 +16,7 @@ function App() {
       body: JSON.Stringify(data),
       mode: 'cors'
     })
-      .catch(error => {
-        console.log(error+"FF"); 
-      });
+      .catch(console.error);
     alert(data.target.value);
   }
 
