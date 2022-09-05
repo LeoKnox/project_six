@@ -1,6 +1,7 @@
 import './App.css';
 import Single from './single.js';
 import {useEffect, useState} from 'react';
+import { Routes, Route } from 'react-router-dom';
 import React from 'react';
 
 function App() {
@@ -33,9 +34,11 @@ function App() {
   if (records)
     return (
     <>
+    <Routes>
     {records.map(x => (
-      <Single record={x.record} />)
+      <Route path="singles" element={<Single record={x.record} />} />)
      )}
+     </Routes>
      <form onSubmit={handleSubmit} method="POST">
        <label>
          Record:
