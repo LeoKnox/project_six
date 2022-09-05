@@ -36,6 +36,7 @@ function App() {
     <>
     <BrowserRouter>
     <Routes>
+      <Route path="/" element={<Single record={1} />} />
     {records.map(x => (
       <Route path="singles" element={<Single record={x.record} />} />)
      )}
