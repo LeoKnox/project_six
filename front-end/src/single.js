@@ -8,11 +8,8 @@ function testx() {
 
 function Single(records) {
     const [prop, showProp] = useState(true);
-    console.log("!!!"+typeof(records));
-    function test() {
-        console.log("green");
-        showProp(!prop);
-    }
+    console.log("!!!"+records);
+    
     return (
         <>
         {records.map((value) =>

@@ -28,7 +28,8 @@ function App() {
   useEffect(() => {
     fetch(`http://127.0.0.1:8000/record/api/`)
       .then(response => response.json())
-      .then(setRecord.data)
+      .then(setRecord)
+      .then(console.log(records))
       .catch(console.error)
   }, [])
   if (records)
