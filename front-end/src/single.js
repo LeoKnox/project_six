@@ -9,11 +9,11 @@ function testx() {
 function Single(records) {
     const [prop, showProp] = useState(true);
     console.log("!!!"+records);
-    
+
     return (
         <>
-        {records.map((value) =>
-            <p>{value}</p>
+        {Object.keys(records).map((record, key) =>
+            <p>{record} g</p>
         )}
         </>
     )
