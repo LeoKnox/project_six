@@ -15,9 +15,9 @@ function Single(records) {
     }
     return (
         <>
-        Object.entries(records).map((key, value) =>
-            <p key={key}>{value}</p>
-        )
+        {records.map((value) =>
+            <p>{value}</p>
+        )}
         </>
     )
 }
