@@ -12,7 +12,7 @@ function Single(records) {
 
     return (
         <>
-        {Object.keys(records).map((record, key) =>
+        {Object.values(records).map((record) =>
             <p>{record} g</p>
         )}
         </>
