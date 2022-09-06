@@ -34,12 +34,10 @@ function App() {
   if (records)
     return (
     <>
+    <h1>Records</h1>
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Single record={1} />} />
-    {records.map(x => (
-      <Route path="singles" element={<Single record={x.record} />} />)
-     )}
+      <Route path="/" element={<Single record={records} />} />
      </Routes>
      </BrowserRouter>
      <form onSubmit={handleSubmit} method="POST">

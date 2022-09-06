@@ -6,17 +6,18 @@ function testx() {
     return(<p>red</p>);
 }
 
-function Single(record) {
+function Single(records) {
     const [prop, showProp] = useState(true);
     function test() {
         console.log("green");
         showProp(!prop);
     }
     return (
-        <p onClick={() => {test()}}>
-            One at a time {record.record}
-            {prop ? <p>red</p> : <p>blue</p>}
-        </p>
+        <>
+        {records.map(x => (
+            <p>{x.record}</p>
+        ))}
+        </>
     )
 }
 
