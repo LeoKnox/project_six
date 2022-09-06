@@ -38,7 +38,7 @@ function App() {
     <h1>Records</h1>
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Single record={records} />} />
+      <Route path="/" element={<Single record={records.data} />} />
      </Routes>
      </BrowserRouter>
      <form onSubmit={handleSubmit} method="POST">
