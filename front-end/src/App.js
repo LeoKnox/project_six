@@ -29,7 +29,6 @@ function App() {
     fetch(`http://127.0.0.1:8000/record/api/`)
       .then(response => response.json())
       .then(setRecord)
-      .then(console.log(records + "@@@"))
       .catch(console.error)
   }, [])
   if (records)
@@ -38,9 +37,11 @@ function App() {
     <h1>Records</h1>
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Single record={records} />} />
+      <Route path="/" element={<p>{records}!!</p>} />
+      <Route path="/sadf" element={<Single record={records} />} />
      </Routes>
      </BrowserRouter>
+     <p>{records}</p>
      <form onSubmit={handleSubmit} method="POST">
        <label>
          Record:

@@ -12,9 +12,6 @@ function Single(records) {
 
     return (
         <>
-        {records && records.map(record =>
-            <p>{record} g</p>
-        )}
         </>
     )
 }
